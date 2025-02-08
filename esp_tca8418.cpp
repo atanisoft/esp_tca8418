@@ -7,6 +7,7 @@
 
 #include <driver/gpio.h>
 #include <driver/i2c_master.h>
+#include <esp_idf_version.h>
 #include <esp_log.h>
 #include <algorithm>
 
