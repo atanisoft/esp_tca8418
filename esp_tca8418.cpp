@@ -75,7 +75,10 @@ bool TCA8418::hw_init(size_t rows, size_t columns)
             .trans_queue_depth = 0,
             .flags =
             {
-                .enable_internal_pullup = true
+                .enable_internal_pullup = true,
+#if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5,4,0)
+                .allow_pd = false
+#endif
             }
         };
         ESP_LOGI(TAG, "Initializing I2C bus (scl:%d, sda:%d)", sclPin_, sdaPin_);
